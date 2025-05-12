@@ -54,28 +54,7 @@ const Header: React.FC = () => {
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'glass-effect shadow-soft' : 'bg-white/90'
     }`}>
-      {/* Top Bar */}
-      <div className="bg-gradient-to-r from-primary to-primary-dark text-white py-2 text-sm">
-        <div className="container-custom flex flex-wrap justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <a href="tel:+910000000000" className="flex items-center hover:text-accent transition-colors">
-              <Phone size={14} className="mr-1" />
-              <span>+91 00000 00000</span>
-            </a>
-            <a href="mailto:info@takshasilavidyapeeth.edu" className="flex items-center hover:text-accent transition-colors">
-              <Mail size={14} className="mr-1" />
-              <span>info@takshasilavidyapeeth.edu</span>
-            </a>
-          </div>
-          <div className="flex items-center">
-            <div className="flex items-center hover:text-accent transition-colors">
-              <MapPin size={14} className="mr-1" />
-              <span>Bakhri (Main) | Begusarai</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+     
       {/* Main Navigation */}
       <nav className="py-4">
         <div className="container-custom flex justify-between items-center">
