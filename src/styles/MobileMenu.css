@@ -1,0 +1,272 @@
+.mobile-menu {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  z-index: 1000;
+}
+
+.mobile-menu.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.mobile-logo {
+  height: 40px;
+}
+
+.logo-image {
+  height: 100%;
+  width: auto;
+}
+
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.hamburger-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #352B9B;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.bar:nth-child(1) {
+  top: 0;
+}
+
+.bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar:nth-child(3) {
+  bottom: 0;
+}
+
+.bar.animate:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.bar.animate:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.animate:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 71px);
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.menu-item {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu-item:nth-child(6) { animation-delay: 0.6s; }
+
+.menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.submenu.open {
+  max-height: 500px;
+}
+
+.submenu-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.submenu-item:last-child {
+  border-bottom: none;
+}
+
+.submenu-link {
+  display: block;
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.submenu-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-icon, .arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Color scheme for mobile menu */
+.menu-item.about-section {
+  background-color: #352B9B;
+}
+
+.menu-item.about-section .submenu {
+  background-color: #433EB9;
+}
+
+.menu-item.main-section {
+  background-color: #4D46D1;
+}
+
+.menu-item.main-section:nth-child(odd) {
+  background-color: #352B9B;
+}
+
+.menu-footer {
+  background-color: #2A2478;
+  padding: 20px;
+  color: white;
+  margin-top: auto;
+}
+
+.contact-info {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+    padding: 15px;
+    background: #fff;
+    color: #333;
+    text-align: right;
+    cursor: pointer;
+  }
+  
+  /* About section - expanded dropdown styling */
+  .menu-item.about-section.active {
+    background-color: #352B9B;
+  }
+  
+  .menu-item.about-section.active .menu-link {
+    color: white;
+  }
+  
+  .menu-item.about-section .submenu-item {
+    padding: 0;
+  }
+  
+  /* Specific styling for sections */
+  .menu-item.main-section {
+    background-color: #352B9B;
+  }
+  
+  .menu-item.main-section .menu-link {
+    color: white;
+  }
+  
+  .menu-item.main-section .toggle-icon {
+    color: white;
+  }
+}
+
+/* Desktop menu hiding */
+@media (min-width: 1025px) {
+  .mobile-menu {
+    display: none;
+  }
+}
